@@ -1,0 +1,11 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @celebrity %>
+
+<div>
+  <% if policy(@celebrity).edit? %>
+    <%= link_to "Edit this celebrity", edit_celebrity_path(@celebrity) %> |
+  <% end %>
+  <%= link_to "Back to celebrities", celebrities_path %>
+  <%= button_to "Destroy this celebrity", @celebrity, method: :delete if policy(@celebrity).destroy? %>
+</div>
