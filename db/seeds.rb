@@ -5,3 +5,6 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
+
+Photo.create(url: "https://res.cloudinary.com/dfipoufmj/image/upload/v1681720143/ap23078750770682-17b30c0b0b6a544e862bcc523073c332b8e6f805_u3wvlg.jpg", user_id: 1)
+Photo.create(url: "https://res.cloudinary.com/dfipoufmj/image/upload/v1681717882/28003-1671435885_irrmqv.webp", user_id: 1)
