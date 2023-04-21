@@ -12,22 +12,22 @@ module Api
 
       # GET /photos/1 or /photos/1.json
       def show
-        logger.info("Photo ID: #{params[:id]} requested")
+        # logger.info("Photo ID: #{params[:id]} requested")
 
         authorize @photo
         @photo = Photo.find(params[:id])
 
         Cloudinary.config do |config|
-          logger.debug("Setting up Cloudinary configuration")
+          # logger.debug("Setting up Cloudinary configuration")
 
           config.cloud_name = 'dfipoufmj'
           config.api_key = '683468962932261'
           config.api_secret = 'UPJds4t9KQm8f_KSUDWgl0XWXhY'
         end
         @url = Cloudinary::Utils.cloudinary_url(@photo.photo.key)
-        logger.debug("Cloudinary URL: #{@url}")
+        # logger.debug("Cloudinary URL: #{@url}")
 
-        @url.sub!("/image/upload/", "/image/upload/development/")
+        @url.sub!("/image/upload/", "/image/upload/production/")
 
         url = "https://celebrity-face-detection.p.rapidapi.com/"
         headers = {
@@ -39,15 +39,15 @@ module Api
           "image_url" => @url
         }
 
-        logger.debug("Sending POST request to celebrity face detection API")
+        # logger.debug("Sending POST request to celebrity face detection API")
 
         response = HTTParty.post(url, headers: headers, body: body)
 
-        logger.debug("Response: #{response.body}")
+        # logger.debug("Response: #{response.body}")
 
         @response = JSON.parse(response.body)
-        logger.debug("Parsed JSON response: #{@response}")
-
+        # logger.debug("Parsed JSON response: #{@response}")
+#
         # @name = @response[0]["name"]
       end
 
