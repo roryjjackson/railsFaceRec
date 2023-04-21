@@ -21,7 +21,7 @@ module Api
           config.api_secret = 'UPJds4t9KQm8f_KSUDWgl0XWXhY'
         end
         @url = Cloudinary::Utils.cloudinary_url(@photo.photo.key)
-        @url.sub!("/image/upload/", "/image/upload/development/")
+        # @url.sub!("/image/upload/", "/image/upload/development/")
 
         url = "https://celebrity-face-detection.p.rapidapi.com/"
         headers = {
@@ -34,7 +34,7 @@ module Api
         }
 
         response = HTTParty.post(url, headers: headers, body: body)
-
+        raise
         @response = JSON.parse(response.body)
         # @name = @response[0]["name"]
       end
