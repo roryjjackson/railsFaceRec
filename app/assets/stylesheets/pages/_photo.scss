@@ -6,3 +6,21 @@
 .photo-container h1 {
   margin-bottom: 30px;
 }
+
+#lookalike-title {
+  margin: 30px auto;
+}
+
+.index-img {
+  margin-top: 50px;
+}
+
+#photos {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+.photo {
+  margin: auto;
+  justify-content: center;
+}
