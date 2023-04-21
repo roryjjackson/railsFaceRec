@@ -1,4 +1,8 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
-<%= link_to "index of your celebs", celebrities_path %>
-<%= link_to "index of your photos", photos_path %>
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://res.cloudinary.com/dfipoufmj/image/upload/v1682014739/pexels-marcin-dampc-1684187_fsnjod.jpg);">
+  <div class="container">
+    <h1>FaceRec</h1>
+    <p>The app that helps you recognise people</p>
+    <button class="button"><%= link_to "Get started", new_api_v1_photo_path %></button>
+  </div>
+</div>
+<%# <%= link_to "Previous entries", celebrities_path %>

@@ -36,7 +36,7 @@ module Api
         response = HTTParty.post(url, headers: headers, body: body)
 
         @response = JSON.parse(response.body)
-        @name = @response[0]["name"]
+        # @name = @response[0]["name"]
       end
 
       # GET /photos/new
