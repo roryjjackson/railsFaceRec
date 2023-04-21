@@ -34,7 +34,7 @@ module Api
         }
 
         response = HTTParty.post(url, headers: headers, body: body)
-        raise
+        # raise
         @response = JSON.parse(response.body)
         # @name = @response[0]["name"]
       end
