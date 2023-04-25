@@ -5,12 +5,12 @@ module Api
       before_action :set_photo, only: %i[ show edit update destroy ]
       require 'httparty'
       require 'cloudinary'
-
       def index
         @photos = policy_scope(Photo)
       end
 
       def show
+
         authorize @photo
         @photo = Photo.find(params[:id])
 
@@ -22,7 +22,7 @@ module Api
         end
         @url = Cloudinary::Utils.cloudinary_url(@photo.photo.key)
 
-        @url.sub!("/image/upload/", "/image/upload/development/")
+        @url.sub!("/image/upload/", "/image/upload/production/")
 
         url = "https://celebrity-face-detection.p.rapidapi.com/"
         headers = {
@@ -35,6 +35,7 @@ module Api
         }
 
         response = HTTParty.post(url, headers: headers, body: body)
+
         @response = JSON.parse(response.body)
       end
 
