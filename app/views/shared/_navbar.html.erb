@@ -1,15 +1,18 @@
-<div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
+<div class="navbar">
   <div class="container-fluid">
     <%= link_to "/", class: "nav-link" do %>
       <p class="nav-link">Home</p>
     <% end %>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto">
+    <ul class="navbar-nav">
+      <div class="navbar-container">
         <% if user_signed_in? %>
-          <li class="nav-item dropdown">
+          <li class="nav-item">
             <%= link_to "History", api_v1_photos_path, class: "nav-link" %>
           </li>
-          <li class="nav-item dropdown">
+          <li class="nav-item">
+            <%= link_to "Upload", new_api_v1_photo_path, class: "nav-link" %>
+          </li>
+          <li class="nav-item">
             <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, class: "nav-link" %>
           </li>
         <% else %>
@@ -17,7 +20,7 @@
             <%= link_to "Login", new_user_session_path, class: "nav-link" %>
           </li>
         <% end %>
-      </ul>
-    </div>
+      </div>
+    </ul>
   </div>
 </div>

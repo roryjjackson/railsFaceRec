@@ -6,4 +6,13 @@ const application = Application.start()
 application.debug = false
 window.Stimulus   = application
 
+$(document).on('submit', 'form', function() {
+  $('#loader').show();
+});
+
+$(document).ajaxComplete(function() {
+  $('#loader').hide();
+});
+
+
 export { application }

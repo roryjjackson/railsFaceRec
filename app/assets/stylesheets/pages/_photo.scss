@@ -12,15 +12,63 @@
 }
 
 .index-img {
-  margin-top: 50px;
+  margin-top: auto;
+  height: 100%;
+  width: 200px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  object-fit: cover;
+}
+
+#index-title {
+  margin-bottom: 30px;
 }
 
 #photos {
   display: grid;
   grid-template-columns: 1fr;
+  overflow: auto;
+  max-height: 60vh;
 }
 
 .photo {
-  margin: auto;
-  justify-content: center;
+  margin: 20px auto;
+  max-width: 650px;
+  background: transparent;
+  display: flex;
+  align-items: center;
+}
+
+.card-buttons {
+  display: flex;
+}
+
+.card-button {
+  border-radius: 10px;
+  box-shadow: none;
+  border: none;
+  width: 150px;
+  height: 50px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  margin: 10px;
+}
+
+.card-button a {
+  text-decoration: none;
+  color: black;
+}
+
+@media only screen and (min-width: 1px) and (max-width: 1000px) {
+  .photo {
+    display: block;
+  }
+
+  .index-img {
+    height: auto;
+  }
+
+  .card-button {
+    width: 100px;
+    height: 30px;
+    font-size: 10px;
+  }
 }
