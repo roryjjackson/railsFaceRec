@@ -5,27 +5,22 @@ module Api
       before_action :set_photo, only: %i[ show edit update destroy ]
       require 'httparty'
       require 'cloudinary'
-      # GET /photos or /photos.json
       def index
         @photos = policy_scope(Photo)
       end
 
-      # GET /photos/1 or /photos/1.json
       def show
-        # logger.info("Photo ID: #{params[:id]} requested")
 
         authorize @photo
         @photo = Photo.find(params[:id])
 
         Cloudinary.config do |config|
-          # logger.debug("Setting up Cloudinary configuration")
 
           config.cloud_name = 'dfipoufmj'
           config.api_key = '683468962932261'
           config.api_secret = 'UPJds4t9KQm8f_KSUDWgl0XWXhY'
         end
         @url = Cloudinary::Utils.cloudinary_url(@photo.photo.key)
-        # logger.debug("Cloudinary URL: #{@url}")
 
         @url.sub!("/image/upload/", "/image/upload/production/")
 
@@ -39,30 +34,20 @@ module Api
           "image_url" => @url
         }
 
-        # logger.debug("Sending POST request to celebrity face detection API")
-
         response = HTTParty.post(url, headers: headers, body: body)
 
-        # logger.debug("Response: #{response.body}")
-
         @response = JSON.parse(response.body)
-        # logger.debug("Parsed JSON response: #{@response}")
-#
-        # @name = @response[0]["name"]
       end
 
-      # GET /photos/new
       def new
         @photo = Photo.new
         authorize @photo
       end
 
-      # GET /photos/1/edit
       def edit
         authorize @photo
       end
 
-      # POST /photos or /photos.json
       def create
         @photo = Photo.new(photo_params)
         @photo.user = current_user
@@ -79,7 +64,6 @@ module Api
         end
       end
 
-      # PATCH/PUT /photos/1 or /photos/1.json
       def update
         authorize @photo
 
@@ -94,7 +78,6 @@ module Api
         end
       end
 
-      # DELETE /photos/1 or /photos/1.json
       def destroy
         @photo.destroy
         authorize @photo
@@ -106,12 +89,10 @@ module Api
       end
 
       private
-        # Use callbacks to share common setup or constraints between actions.
         def set_photo
           @photo = Photo.find(params[:id])
         end
 
-        # Only allow a list of trusted parameters through.
         def photo_params
           params.require(:photo).permit(:url, :photo)
         end
