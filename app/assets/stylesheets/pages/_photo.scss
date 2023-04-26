@@ -1,10 +1,23 @@
 .photo-container {
   margin: auto;
   text-align: center;
+
+  padding: 50px;
+  width: auto;
+  text-align: center;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  background: linear-gradient(135deg, #008aff, #00ffcc);
+  margin-bottom: 150px;
+}
+
+div.form-actions {
+  background: transparent;
 }
 
 .photo-container h1 {
   margin-bottom: 30px;
+  color: white;
 }
 
 #lookalike-title {
@@ -13,10 +26,11 @@
 
 .index-img {
   margin-top: auto;
-  height: 100%;
-  width: 200px;
+  // height: 100%;
+  width: 318px;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   object-fit: cover;
+  border-radius: 10px;
 }
 
 #index-title {
@@ -34,8 +48,8 @@
   margin: 20px auto;
   max-width: 650px;
   background: transparent;
-  display: flex;
-  align-items: center;
+  display: block;
+  // align-items: center;
 }
 
 .card-buttons {
@@ -57,18 +71,20 @@
   color: black;
 }
 
-@media only screen and (min-width: 1px) and (max-width: 1000px) {
-  .photo {
-    display: block;
+@media only screen and (min-width: 1px) and (max-width: 600px) {
+  .index-img {
+    width: 280px;
+    height: 280px;
   }
 
-  .index-img {
-    height: auto;
+  .card-buttons {
+    width: 280px;
   }
 
   .card-button {
-    width: 100px;
     height: 30px;
     font-size: 10px;
   }
+
+
 }

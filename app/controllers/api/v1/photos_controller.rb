@@ -22,7 +22,7 @@ module Api
         end
         @url = Cloudinary::Utils.cloudinary_url(@photo.photo.key)
 
-        @url.sub!("/image/upload/", "/image/upload/production/")
+        @url.sub!("/image/upload/", "/image/upload/development/")
 
         url = "https://celebrity-face-detection.p.rapidapi.com/"
         headers = {
