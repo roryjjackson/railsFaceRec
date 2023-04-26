@@ -14,6 +14,7 @@
 
 .navbar-nav {
   display: flex;
+  margin: initial;
 }
 
 .navbar-container {
@@ -22,14 +23,14 @@
 }
 
 p.nav-link {
-  color: white;
+  color: black;
   padding: 8px;
   font-size: 16px;
   margin: 0;
 }
 
 a.nav-link {
-  color: white;
+  color: black;
   padding: 8px;
   font-size: 16px;
   margin: 0;

@@ -1,3 +1,9 @@
+* {
+  max-width: 1050px;
+  margin: auto;
+  background-color: white;
+}
+
 .banner {
   background-size: cover;
   background-position: center;
@@ -11,21 +17,27 @@
 .banner h1 {
   margin: 0;
   color: white;
-  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
   font-size: 50px;
+  background: transparent;
   font-weight: bold;
 }
 
 .banner p {
   font-size: 20px;
   color: white;
+  background: transparent;
   opacity: .7;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
 }
 
 .container {
-  margin: auto;
+  padding: 50px;
+  width: auto;
   text-align: center;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  background: linear-gradient(135deg, #008aff, #00ffcc);
+  margin-bottom: 150px;
 }
 
 .button {
@@ -35,9 +47,30 @@
   width: 200px;
   height: 50px;
   margin-top: 50px;
+  background-color: hotpink;
 }
 
 .button a {
   text-decoration: none;
-  color: black;
+  color: white;
+  background-color: hotpink;
+}
+
+.step-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: transparent;
+}
+
+.step {
+  background: transparent;
+  height: 300px;
+  padding: 10px;
+}
+
+.step h2 {
+  background: transparent;
+  color: white;
+  margin-top: 30px;
 }
