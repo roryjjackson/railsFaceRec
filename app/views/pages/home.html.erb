@@ -1,8 +1,22 @@
-<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://res.cloudinary.com/dfipoufmj/image/upload/v1682014739/pexels-marcin-dampc-1684187_fsnjod.jpg);">
+<div class="banner" >
   <div class="container">
     <h1>FaceRec</h1>
     <p>The app that helps you recognise people</p>
     <button class="button"><%= link_to "Get started", new_api_v1_photo_path %></button>
+    <div class="step-container">
+      <div class="step">
+        <h2>Step 1</h2>
+        <p>Upload an image with one face, preferably looking forward. Face recognition accuracy depends of the resolution.</p>
+      </div>
+        <div class="step">
+        <h2>Step 2</h2>
+        <p>System facial point detection can locate the key components of faces, including eyebrows, eyes, nose, mouth and position.</p>
+      </div>
+        <div class="step">
+        <h2>Step 3</h2>
+        <p>The Neural Network compares the person with celebrity faces and suggests the most similar ones.</p>
+      </div>
+    </div>
   </div>
 </div>
 <%# <%= link_to "Previous entries", celebrities_path %>

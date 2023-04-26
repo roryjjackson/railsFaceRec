@@ -1,4 +1,4 @@
-<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://res.cloudinary.com/dfipoufmj/image/upload/v1682014739/pexels-marcin-dampc-1684187_fsnjod.jpg);">
+<div class="banner">
   <div class="container">
     <h1 id="index-title">
       Your search history
@@ -12,7 +12,7 @@
               <%= link_to "Find out more", api_v1_photo_path(photo) %>
             </button>
             <button style="display: none">
-              <%= button_to "Delete", api_v1_photo_path(photo), method: :delete, class: "card-button", data: { confirm: "Are you sure you want to delete this photo?" } if policy(photo).destroy? %>
+              <%= button_to "Remove", api_v1_photo_path(photo), method: :delete, class: "card-button", data: { confirm: "Are you sure you want to delete this photo?" } if policy(photo).destroy? %>
             </button>
           </div>
         </div>

@@ -1,4 +1,4 @@
-<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://res.cloudinary.com/dfipoufmj/image/upload/v1682014739/pexels-marcin-dampc-1684187_fsnjod.jpg);">
+<div class="banner">
   <div class="container">
     <%= cl_image_tag @photo.photo.key, height: 300, width: 400, crop: :fill, class: "index-img" %>
     <h1 id="lookalike-title"><%= @response[0]["name"] %></h1>
